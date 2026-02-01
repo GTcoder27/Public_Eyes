@@ -9,7 +9,6 @@ import { useAuth } from './src/context/AuthContext';
 export default function LoginScreen() {
   const router = useRouter();
   const { login } = useAuth();
-  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,20 +18,14 @@ export default function LoginScreen() {
       Alert.alert('Error', 'Please enter email and password');
       return;
     }
-
     setLoading(true);
-
     try {
       const response = await backendApi.post('/auth/login', {
         email: email,
         password: password
       });
 
-      console.log(response.data);
-      
-      // Assuming response.data contains the token property
-      // Adjust 'response.data.token' based on your actual API response structure
-      if (response.data?.token) {
+      if (response.data.access_token) {
         await login(response.data.access_token);
       }
       

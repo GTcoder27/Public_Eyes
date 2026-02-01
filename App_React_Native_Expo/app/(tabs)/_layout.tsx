@@ -16,7 +16,7 @@ export default function TabLayout() {
         paddingTop: 0,
       }
     }}>
-      {/* Tab 1: Home (Info) */}
+
       <Tabs.Screen
         name="home"
         options={{
@@ -25,11 +25,10 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Tab 2: New Complaint (Middle Button) */}
       <Tabs.Screen
         name="complaint"
         options={{
-          title: 'Complaint', // Hide text for the middle button usually
+          title: 'Complaint', 
           tabBarIcon: ({ focused }) => (
             <View className="bg-blue-600 w-14 h-14 rounded-full justify-center items-center mb-8 shadow-lg shadow-blue-100">
               <FontAwesome name="plus" size={24} color="white" />
@@ -38,7 +37,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Tab 3: Profile (Logout) */}
       <Tabs.Screen
         name="profile"
         options={{

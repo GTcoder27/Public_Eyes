@@ -2,7 +2,7 @@ import { View, Text, ScrollView } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View className="flex-1 bg-slate-900 pt-12 px-6 mt-1">
+    <View className="flex-1 bg-slate-900 pt-12 px-6 ">
       <Text className="text-3xl font-bold text-slate-200 m-8">How to use</Text>
       
       <ScrollView className="space-y-4 mt-7" showsVerticalScrollIndicator={false} >

@@ -42,9 +42,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     checkToken();
   }, []);
 
-  const login = async (newToken: string) => {
-    setToken(newToken);
-    await SecureStore.setItemAsync('user_token', newToken);
+  const login = async (access_token: string) => {
+    console.log("logging with ",access_token )
+    setToken(access_token);
+    await SecureStore.setItemAsync('user_token', access_token);
   };
 
   const logout = async () => {
